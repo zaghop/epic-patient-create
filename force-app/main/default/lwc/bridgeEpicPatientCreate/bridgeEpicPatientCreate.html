@@ -1,0 +1,140 @@
+<template>
+    <lightning-card>
+        <div class="epic-container">
+            <template if:true={showSpinner}>
+                <div class="exampleHolder">
+                    <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+                </div>
+            </template>
+            <lightning-layout>
+                <lightning-layout-item size="11">
+                    <div class="epic-logo">
+                        <lightning-icon icon-name="standard:user"></lightning-icon>
+                    </div>
+                    <h2 class="slds-text-heading--medium">Epic Patient Create</h2>
+                    <h1 class="slds-text-heading--label">powered by Bridge Connector</h1>
+                </lightning-layout-item>
+                <lightning-layout-item size="1">
+                    <template if:true={showSettingsButton}>
+                        <div style="float: right">
+                            <lightning-button-icon icon-name="utility:settings" alternative-text="Settings" title="Settings" onclick={showSettingsModal}></lightning-button-icon>
+                        </div>
+                    </template>
+                </lightning-layout-item>
+            </lightning-layout>
+            <div class="epic-button-wrapper">
+                <template if:true={settingsPrompt}>
+                    <div class="slds-clearfix slds-card create-patient">
+                        Settings must be entered before sending data to Epic.
+                    </div>
+                </template>
+                <template if:false={settingsPrompt}>
+                    <div class="slds-clearfix slds-card create-patient">
+                        <template if:true={hasEpicId}>
+                            This account was last sent to your EMR on {lastSendDate} by {lastSendUser}. 
+                            <br/>
+                            <br/>
+                        </template> 
+                        <button class="slds-button slds-button_brand" onclick={confirmSubmission}>Send to Epic</button>
+                        <button class="slds-button slds-button_neutral" onclick={previewModalClick}>Preview Data</button>
+                    </div>
+                </template>
+            </div>
+            <template if:true={showSettings}>
+                <c-bridge-epic-patient-create-settings
+                    oninitpreview={initPreview}
+                    onclosesettings={closeSettingsModal}
+                    onshowsettings={showSettingsModal}
+                    onrefreshsettings={refreshSettings}
+                    show-last-credential-save={showLastCredentialSave}
+                    last-save-date={lastSaveDate}
+                    credentials-provided={credentialsProvided}
+                    gender={gender}
+                    home-phone={homePhone}
+                    mobile-phone={mobilePhone}
+                    work-phone={workPhone}
+                    ssn={ssn}
+                    default-generic-s-s-n={defaultGenericSSN}
+                    default-generic-options={defaultGenericOptions}
+                    generic-s-s-ns={genericSSNs}
+                    generic-pill-arr={genericPillArr}>
+                </c-bridge-epic-patient-create-settings>
+            </template>
+        </div>
+        <template if:true={showPreviewModal}>
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closePreviewModal}>
+                            <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse" size="small"></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h2 id="modal-heading-02" class="slds-modal__title slds-hyphenate">Preview Data</h2>
+                    </header>
+                        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2" style="text-align: left;">
+                            <lightning-record-view-form record-id={recordId} object-api-name={objectApiName}>
+                                <div class="slds-box slds-theme_shade">
+                                    <h1 class="slds-text-heading_small">Patient Info</h1>
+                                </div>
+                                <div class="slds-grid">
+                                    <div class="slds-col slds-size_1-of-2">
+                                        <lightning-output-field field-name="FirstName"></lightning-output-field>
+                                        <lightning-output-field field-name={gender}></lightning-output-field>
+                                        <lightning-output-field field-name={ssn}></lightning-output-field>
+                                        <lightning-output-field field-name={homePhone}></lightning-output-field>
+                                        <lightning-output-field field-name={workPhone}></lightning-output-field>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-2">
+                                        <lightning-output-field field-name="LastName"></lightning-output-field>
+                                        <lightning-output-field field-name="PersonBirthdate"></lightning-output-field>
+                                        <lightning-output-field field-name="PersonEmail"></lightning-output-field>
+                                        <lightning-output-field field-name={mobilePhone}></lightning-output-field>
+                                    </div>
+                                </div>
+                                <div class="slds-box slds-theme_shade">
+                                    <h1 class="slds-text-heading_small">Address</h1>
+                                </div>
+                                <div class="slds-grid">
+                                    <div class="slds-col slds-size_1-of-2">
+                                        <lightning-output-field field-name="PersonMailingStreet"></lightning-output-field>
+                                        <lightning-output-field field-name="PersonMailingCity"></lightning-output-field>
+                                        <lightning-output-field field-name="PersonMailingState"></lightning-output-field>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-2">
+                                        <lightning-output-field field-name="PersonMailingPostalCode"></lightning-output-field>
+                                        <lightning-output-field field-name="PersonMailingCountry"></lightning-output-field>
+                                    </div>
+                                </div>
+                            </lightning-record-view-form>
+                        </div>
+                    <footer class="slds-modal__footer">
+                        <button class="slds-button slds-button_neutral" onclick={closePreviewModal}>Cancel</button>
+                        <button class="slds-button slds-button_brand" onclick={confirmSubmission}>Send to Epic</button>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+        <template if:true={showConfirmModal}>
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-02" aria-modal="true" aria-describedby="modal-content-id-2" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeConfirmModal}>
+                            <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse" size="small"></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h2 id="modal-heading-03" class="slds-modal__title slds-hyphenate">Confirm Resubmission</h2>
+                    </header>
+                        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-3" style="text-align: center;">
+                           This patient's data has already been sent to Epic. Would you like to send the data again?
+                        </div>
+                    <footer class="slds-modal__footer">
+                        <button class="slds-button slds-button_neutral" onclick={closeConfirmModal}>Cancel</button>
+                        <button class="slds-button slds-button_brand" onclick={submissionConfirmed}>Send to Epic</button>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+    </lightning-card>
+</template>

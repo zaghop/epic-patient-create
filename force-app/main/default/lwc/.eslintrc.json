@@ -1,0 +1,10 @@
+{
+  "extends": ["@salesforce/eslint-config-lwc/recommended"],
+  "rules": {
+    "no-console": 0
+  },
+  "parserOptions": {
+    "ecmaVersion": 8,
+     "sourceType": "module"
+  }
+}

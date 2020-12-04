@@ -1,0 +1,259 @@
+[
+    [
+        "/Users/jstacer/Workspace/dev/crm-epic-patient-create/force-app",
+        {
+            "sourcePath": "/Users/jstacer/Workspace/dev/crm-epic-patient-create/force-app",
+            "isDirectory": true,
+            "size": 96,
+            "modifiedTime": 1588632043694,
+            "changeTime": 1588632043694,
+            "contentHash": "b28b7af69320201d1cf206ebf28373980add1451",
+            "isMetadataFile": false,
+            "state": "u",
+            "isWorkspace": false,
+            "isArtifactRoot": true
+        }
+    ],
+    [
+        "/Users/jstacer/Workspace/dev/crm-epic-patient-create/force-app/main",
+        {
+            "sourcePath": "/Users/jstacer/Workspace/dev/crm-epic-patient-create/force-app/main",
+            "isDirectory": true,
+            "size": 96,
+            "modifiedTime": 1588632043694,
+            "changeTime": 1588632043694,
+            "contentHash": "7505d64a54e061b7acd54ccd58b49dc43500b635",
+            "isMetadataFile": false,
+            "state": "u",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/Users/jstacer/Workspace/dev/crm-epic-patient-create/force-app/main/default",
+        {
+            "sourcePath": "/Users/jstacer/Workspace/dev/crm-epic-patient-create/force-app/main/default",
+            "isDirectory": true,
+            "size": 128,
+            "modifiedTime": 1588632043694,
+            "changeTime": 1588632043694,
+            "contentHash": "3a255ff489cff7ad29aac5620772096648592233",
+            "isMetadataFile": false,
+            "state": "u",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/Users/jstacer/Workspace/dev/crm-epic-patient-create/force-app/main/default/classes",
+        {
+            "sourcePath": "/Users/jstacer/Workspace/dev/crm-epic-patient-create/force-app/main/default/classes",
+            "isDirectory": true,
+            "size": 128,
+            "modifiedTime": 1588632043694,
+            "changeTime": 1588632043694,
+            "contentHash": "8470fd4d787bb100498ddd57b0f8866c64d56715",
+            "isMetadataFile": false,
+            "state": "u",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/Users/jstacer/Workspace/dev/crm-epic-patient-create/force-app/main/default/classes/BridgeEpicPatientCreate.cls",
+        {
+            "sourcePath": "/Users/jstacer/Workspace/dev/crm-epic-patient-create/force-app/main/default/classes/BridgeEpicPatientCreate.cls",
+            "isDirectory": false,
+            "size": 4895,
+            "modifiedTime": 1589234789162,
+            "changeTime": 1588914309104,
+            "contentHash": "73d7500baa023ab5b080a62a0c4d9178a5868059",
+            "isMetadataFile": false,
+            "state": "u",
+            "isWorkspace": false
+        }
+    ],
+    [
+        "/Users/jstacer/Workspace/dev/crm-epic-patient-create/force-app/main/default/classes/BridgeEpicPatientCreate.cls-meta.xml",
+        {
+            "sourcePath": "/Users/jstacer/Workspace/dev/crm-epic-patient-create/force-app/main/default/classes/BridgeEpicPatientCreate.cls-meta.xml",
+            "isDirectory": false,
+            "size": 174,
+            "modifiedTime": 1588632043694,
+            "changeTime": 1588632043694,
+            "contentHash": "50701282159e2679109ad6da2dfbb354eca50ce0",
+            "isMetadataFile": true,
+            "state": "u",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/Users/jstacer/Workspace/dev/crm-epic-patient-create/force-app/main/default/lwc",
+        {
+            "sourcePath": "/Users/jstacer/Workspace/dev/crm-epic-patient-create/force-app/main/default/lwc",
+            "isDirectory": true,
+            "size": 192,
+            "modifiedTime": 1588711230882,
+            "changeTime": 1588711230882,
+            "contentHash": "feede36bf71cfceadb728bd819f0d824c4766621",
+            "isMetadataFile": false,
+            "state": "u",
+            "isWorkspace": false
+        }
+    ],
+    [
+        "/Users/jstacer/Workspace/dev/crm-epic-patient-create/force-app/main/default/lwc/bridgeEpicPatientCreate",
+        {
+            "sourcePath": "/Users/jstacer/Workspace/dev/crm-epic-patient-create/force-app/main/default/lwc/bridgeEpicPatientCreate",
+            "isDirectory": true,
+            "size": 192,
+            "modifiedTime": 1588632043695,
+            "changeTime": 1588632043695,
+            "contentHash": "8f4099773a5cf3ccb05cb2d3bba2dfd4da226df9",
+            "isMetadataFile": false,
+            "state": "u",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/Users/jstacer/Workspace/dev/crm-epic-patient-create/force-app/main/default/lwc/bridgeEpicPatientCreate/bridgeEpicPatientCreate.css",
+        {
+            "sourcePath": "/Users/jstacer/Workspace/dev/crm-epic-patient-create/force-app/main/default/lwc/bridgeEpicPatientCreate/bridgeEpicPatientCreate.css",
+            "isDirectory": false,
+            "size": 61,
+            "modifiedTime": 1588632043695,
+            "changeTime": 1588632043695,
+            "contentHash": "8c1aa0ecabe20835c03ac7dc2ecb2a7ee5f43021",
+            "isMetadataFile": false,
+            "state": "u",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/Users/jstacer/Workspace/dev/crm-epic-patient-create/force-app/main/default/lwc/bridgeEpicPatientCreate/bridgeEpicPatientCreate.html",
+        {
+            "sourcePath": "/Users/jstacer/Workspace/dev/crm-epic-patient-create/force-app/main/default/lwc/bridgeEpicPatientCreate/bridgeEpicPatientCreate.html",
+            "isDirectory": false,
+            "size": 593,
+            "modifiedTime": 1588686823385,
+            "changeTime": 1588686823385,
+            "contentHash": "46f74ee0384dfdd887b78b03aa834687183e1176",
+            "isMetadataFile": false,
+            "state": "u",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/Users/jstacer/Workspace/dev/crm-epic-patient-create/force-app/main/default/lwc/bridgeEpicPatientCreate/bridgeEpicPatientCreate.js",
+        {
+            "sourcePath": "/Users/jstacer/Workspace/dev/crm-epic-patient-create/force-app/main/default/lwc/bridgeEpicPatientCreate/bridgeEpicPatientCreate.js",
+            "isDirectory": false,
+            "size": 4244,
+            "modifiedTime": 1588632043695,
+            "changeTime": 1588632043695,
+            "contentHash": "d4189edc723ea8e3791e17d632ee3bd301e9d264",
+            "isMetadataFile": false,
+            "state": "u",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/Users/jstacer/Workspace/dev/crm-epic-patient-create/force-app/main/default/lwc/bridgeEpicPatientCreate/bridgeEpicPatientCreate.js-meta.xml",
+        {
+            "sourcePath": "/Users/jstacer/Workspace/dev/crm-epic-patient-create/force-app/main/default/lwc/bridgeEpicPatientCreate/bridgeEpicPatientCreate.js-meta.xml",
+            "isDirectory": false,
+            "size": 365,
+            "modifiedTime": 1588632043695,
+            "changeTime": 1588632043695,
+            "contentHash": "b136e59d041bbbfd56bd6b8979e63d44b9af0ea6",
+            "isMetadataFile": true,
+            "state": "u",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/Users/jstacer/Workspace/dev/crm-epic-patient-create",
+        {
+            "sourcePath": "/Users/jstacer/Workspace/dev/crm-epic-patient-create",
+            "isDirectory": true,
+            "size": 384,
+            "modifiedTime": 1588711230289,
+            "changeTime": 1588711230289,
+            "contentHash": "90f0859f0ad82c90fff49909b0b233c9a1c05971",
+            "isMetadataFile": false,
+            "state": "u",
+            "isWorkspace": true
+        }
+    ],
+    [
+        "/Users/jstacer/Workspace/dev/crm-epic-patient-create/force-app/main/default/lwc/bridgeEpicPatientCreateSettings",
+        {
+            "sourcePath": "/Users/jstacer/Workspace/dev/crm-epic-patient-create/force-app/main/default/lwc/bridgeEpicPatientCreateSettings",
+            "isDirectory": true,
+            "size": 192,
+            "modifiedTime": 1588771176774,
+            "changeTime": 1588771176774,
+            "contentHash": "76e9c4c90210fec4519d76fd2aa684b15dd966bd",
+            "isMetadataFile": false,
+            "state": "u"
+        }
+    ],
+    [
+        "/Users/jstacer/Workspace/dev/crm-epic-patient-create/force-app/main/default/lwc/bridgeEpicPatientCreateSettings/bridgeEpicPatientCreateSettings.html",
+        {
+            "sourcePath": "/Users/jstacer/Workspace/dev/crm-epic-patient-create/force-app/main/default/lwc/bridgeEpicPatientCreateSettings/bridgeEpicPatientCreateSettings.html",
+            "isDirectory": false,
+            "size": 5625,
+            "modifiedTime": 1589262821502,
+            "changeTime": 1589262821502,
+            "contentHash": "f9ffb2c0f18366b7ee8fe47dad74f81deddf3eff",
+            "isMetadataFile": false,
+            "state": "u"
+        }
+    ],
+    [
+        "/Users/jstacer/Workspace/dev/crm-epic-patient-create/force-app/main/default/lwc/bridgeEpicPatientCreateSettings/bridgeEpicPatientCreateSettings.js",
+        {
+            "state": "u",
+            "sourcePath": "/Users/jstacer/Workspace/dev/crm-epic-patient-create/force-app/main/default/lwc/bridgeEpicPatientCreateSettings/bridgeEpicPatientCreateSettings.js",
+            "isDirectory": false,
+            "isMetadataFile": false,
+            "size": 4516,
+            "modifiedTime": 1589263771656,
+            "changeTime": 1589263771656,
+            "contentHash": "4cc04eb6e1f67a1e2a4d868c8fba365f6c1787c5"
+        }
+    ],
+    [
+        "/Users/jstacer/Workspace/dev/crm-epic-patient-create/force-app/main/default/lwc/bridgeEpicPatientCreateSettings/bridgeEpicPatientCreateSettings.js-meta.xml",
+        {
+            "sourcePath": "/Users/jstacer/Workspace/dev/crm-epic-patient-create/force-app/main/default/lwc/bridgeEpicPatientCreateSettings/bridgeEpicPatientCreateSettings.js-meta.xml",
+            "isDirectory": false,
+            "size": 372,
+            "modifiedTime": 1588770640883,
+            "changeTime": 1588770640883,
+            "contentHash": "a02b8f68090aa66084b66af671a241c021e2813e",
+            "isMetadataFile": true,
+            "state": "u"
+        }
+    ],
+    [
+        "/Users/jstacer/Workspace/dev/crm-epic-patient-create/force-app/main/default/lwc/bridgeEpicPatientCreateSettings/bridgeEpicPatientCreateSettings.css",
+        {
+            "sourcePath": "/Users/jstacer/Workspace/dev/crm-epic-patient-create/force-app/main/default/lwc/bridgeEpicPatientCreateSettings/bridgeEpicPatientCreateSettings.css",
+            "isDirectory": false,
+            "size": 74,
+            "modifiedTime": 1588788488174,
+            "changeTime": 1588788488174,
+            "contentHash": "0a8910e2c0bfdafd6f28aaf3d9b5d40ced4d21ba",
+            "isMetadataFile": false,
+            "state": "u"
+        }
+    ]
+]

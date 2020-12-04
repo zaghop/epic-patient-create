@@ -1,0 +1,35 @@
+.epic-logo {
+    width:40px; 
+    height:40px; 
+    float: left; 
+    margin-right: 10px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(96,188,203);
+    border-radius: 5px;
+}
+
+.epic-button-wrapper {
+    margin-top: 15px;
+}
+
+.epic-container {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.create-patient {
+    text-align: center;
+}
+
+.slds-modal__content {
+	overflow: initial;
+}
+
+.slds-box.slds-theme_shade {
+    border: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 3px;
+}

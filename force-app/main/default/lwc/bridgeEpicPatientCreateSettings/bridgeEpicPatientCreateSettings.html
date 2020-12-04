@@ -1,0 +1,148 @@
+<template>
+    <template if:false={showDeletePill}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" 
+                 class="slds-modal slds-fade-in-open slds-modal_medium">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeSettingsModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse" size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Epic Patient Create Settings</h2>
+                    <template if:true={showLastCredentialSave}>
+                        <div style="margin-top: 5px; text-align: center;">Last Save Date: {lastSaveDate}</div>
+                    </template>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <template if:true={showErrorMessage}>
+                        <div class="slds-text-color_error">{errorMessage}</div>
+                    </template>
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-size_1-of-3">
+                            <div class="slds-box slds-theme_shade">
+                                <h1 class="slds-text-heading_small">Credentials</h1>
+                            </div>
+                            <div class="slds-p-bottom_small">
+                                <lightning-input onchange={handleInputChange} label="Username" data-name="username" value={username}></lightning-input>
+                            </div>
+                            <div class="slds-p-bottom_small">
+                                <lightning-input onchange={handleInputChange} type="password" label="Password" data-name="password" value={password}></lightning-input>
+                            </div>
+                            <div class="slds-p-bottom_small">
+                                <lightning-input onchange={handleInputChange} label="Epic Client ID" data-name="client_id" value={client_id}></lightning-input>
+                            </div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-3">
+                            <div class="slds-box slds-theme_shade">
+                                <h1 class="slds-text-heading_small">Field Source Settings</h1>
+                            </div>
+                            <div class="slds-p-bottom_small">
+                                <lightning-combobox
+                                    name="gender"
+                                    label="Gender"
+                                    value={gender}
+                                    placeholder="Select an Account field"
+                                    options={accountFieldOptions}
+                                    onchange={handleComboboxChange}></lightning-combobox>
+                            </div>
+                            <div class="slds-p-bottom_small">
+                                <lightning-combobox
+                                    name="home_phone"
+                                    label="Home Phone"
+                                    value={homePhone}
+                                    placeholder="Select an Account field"
+                                    options={accountFieldOptions}
+                                    onchange={handleComboboxChange}></lightning-combobox>
+                            </div>
+                            <div class="slds-p-bottom_small">
+                                <lightning-combobox
+                                    name="mobile_phone"
+                                    label="Mobile Phone"
+                                    value={mobilePhone}
+                                    placeholder="Select an Account field"
+                                    options={accountFieldOptions}
+                                    onchange={handleComboboxChange}></lightning-combobox>
+                            </div>
+                            <div class="slds-p-bottom_small">
+                                <lightning-combobox
+                                    name="work_phone"
+                                    label="Work Phone"
+                                    value={workPhone}
+                                    placeholder="Select an Account field"
+                                    options={accountFieldOptions}
+                                    onchange={handleComboboxChange}></lightning-combobox>
+                            </div>
+                            <div class="slds-p-bottom_small">
+                                <lightning-combobox
+                                    name="ssn"
+                                    label="Social Security Number"
+                                    value={ssn}
+                                    placeholder="Select an Account field"
+                                    options={accountFieldOptions}
+                                    onchange={handleComboboxChange}></lightning-combobox>
+                            </div>
+                        </div> 
+                        <div class="slds-col slds-size_1-of-3">
+                            <div class="slds-box slds-theme_shade">
+                                <h1 class="slds-text-heading_small">Social Security Numbers</h1>
+                            </div>
+                            <div class="slds-p-bottom_small">
+                                <lightning-input label="Add a Generic SSN" name="genericSSNinput" value={newSSN} 
+                                                onchange={handleSSNinput} style="margin-bottom: 5px;">
+                                </lightning-input>
+                                <lightning-button variant="brand" label="Add" class="slds-m-left_x-small addButton" onclick={addSSN}></lightning-button>
+                            </div>
+                            <div class="slds-p-bottom_small">
+                                <label class="slds-form-element__label">Generic Social Security Numbers</label><br/>
+                                <template if:true={showEnterGenericMessage}>
+                                    <div class="slds-text-color_error" style="text-align: left;">At least one generic SSN is required.</div>
+                                </template>
+                                <template for:each={pillArr} for:item="pill">
+                                    <lightning-pill
+                                        key={pill.name}
+                                        name={pill.name}
+                                        label={pill.label}
+                                        onremove={checkPillArrLength}>
+                                    </lightning-pill>
+                                </template>
+                            </div>
+                            <template if:true={showSelectDefaultGeneric}>
+                                <div class="slds-p-bottom_small">
+                                    <lightning-combobox
+                                        name="defaultGenericSSN"
+                                        label="Default Generic SSN"
+                                        value={defaultGenericSSN}
+                                        placeholder="Select a default generic social security number"
+                                        options={defaultGenericOptionsArray}
+                                        onchange={handleSSN_ComboboxChange}></lightning-combobox>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button variant="neutral" label="Cancel" class="slds-m-left_x-small" onclick={closeSettingsModal}></lightning-button>
+                    <lightning-button variant="brand" label="Save Settings" class="slds-m-left_x-small" onclick={saveSettings}></lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+    <template if:true={showDeletePill}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+            <header class="slds-modal__header">
+                <h2 id="modal-heading-02" class="slds-modal__title slds-hyphenate">Confirm Delete Generic SSN</h2>
+            </header>
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2" style="text-align: center;">
+                <p>Are you sure you want to remove {clickedPillSSN}?</p>
+            </div>
+            <footer class="slds-modal__footer">
+                <button class="slds-button slds-button_neutral" onclick={cancelDeletePill}>Cancel</button>
+                <button class="slds-button slds-button_brand pill-delete" onclick={handlePillRemove}>Delete</button>
+            </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

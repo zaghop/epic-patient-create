@@ -1,0 +1,27 @@
+.slds-button.slds-button_brand {
+    margin-top: 10px;
+}
+
+.slds-button.slds-button_brand.pill-delete {
+    margin-top: 0;
+}
+
+.slds-modal__content {
+	overflow: initial;
+}
+
+.slds-box.slds-theme_shade {
+    border: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 3px;
+}
+
+.slds-m-left_x-small.addButton {
+    margin-left: 0px;
+}
+
+.slds-text-color_error {
+    margin-bottom: 15px;
+    text-align: center;
+}
